@@ -1,0 +1,164 @@
+<robot name="#M_URDF">
+  <link name="Base">
+    <inertial>
+      <origin xyz="2.48988292640147E-19 -0.000381986343514737 -0.000120769552909844" rpy="0 0 0" />
+      <mass value="0.0172150525280645" />
+      <inertia ixx="4.90923271514972E-06" ixy="-3.71175829427805E-25" ixz="-6.4132105050569E-24" iyy="9.75099348291578E-06" iyz="-1.73634556868552E-09" izz="4.97120831120161E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Base.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Body">
+    <inertial>
+      <origin xyz="3.68188560942887E-05 0.0522122731743004 -0.00109025669822081" rpy="0 0 0" />
+      <mass value="0.301079197417669" />
+      <inertia ixx="0.00038749079961539" ixy="-2.82741377831088E-07" ixz="9.52630642376093E-08" iyy="0.000113222469701063" iyz="-1.09840940959666E-05" izz="0.000346482577016864" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Body.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BR" type="continuous">
+    <origin xyz="0 0.01 0" rpy="0 0 0" />
+    <parent link="Base" />
+    <child link="Body" />
+    <axis xyz="0 1 0" />
+  <limit effort="100" velocity="1.0" lower="-3.14" upper="3.14" /></joint>
+  <link name="Neck">
+    <inertial>
+      <origin xyz="1.82851050531566E-06 0.0117870748098477 0.000149662872534281" rpy="0 0 0" />
+      <mass value="0.0665890089195563" />
+      <inertia ixx="1.56547549552786E-05" ixy="-4.88288987300805E-09" ixz="-2.96684299388073E-08" iyy="1.59459636554017E-05" iyz="1.75733192198039E-07" izz="9.76556713072966E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Neck.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Neck.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="HK" type="continuous">
+    <origin xyz="0 0.1335 0" rpy="0 0 0" />
+    <parent link="Body" />
+    <child link="Neck" />
+    <axis xyz="1 0 0" />
+  <limit effort="100" velocity="1.0" lower="-3.14" upper="3.14" /></joint>
+  <link name="Head">
+    <inertial>
+      <origin xyz="-1.69707604478788E-05 0.022923532368001 0.0192496022024219" rpy="0 0 0" />
+      <mass value="0.248395513826935" />
+      <inertia ixx="0.000232413946547103" ixy="1.11365965126332E-08" ixz="-2.44983525731429E-08" iyy="0.000339283648202534" iyz="8.8219258916185E-06" izz="0.000312324947571492" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Head.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="HR" type="continuous">
+    <origin xyz="0 0.0370884572681199 0" rpy="0 0 0" />
+    <parent link="Neck" />
+    <child link="Head" />
+    <axis xyz="0 1 0" />
+  <limit effort="100" velocity="1.0" lower="-3.14" upper="3.14" /></joint>
+  <link name="Right_Arm">
+    <inertial>
+      <origin xyz="-0.0145222332639852 -0.0182893735486157 -0.00285061290168179" rpy="0 0 0" />
+      <mass value="0.0335568583065499" />
+      <inertia ixx="1.84120710567895E-05" ixy="-4.702802725976E-06" ixz="-2.3177099839779E-07" iyy="4.54819504595918E-06" iyz="-6.43220947711984E-07" izz="1.82957929733706E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Right_Arm.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Right_Arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RA" type="continuous">
+    <origin xyz="-0.04125 0.09365 0" rpy="0 0 0" />
+    <parent link="Body" />
+    <child link="Right_Arm" />
+    <axis xyz="-1 0 0" />
+  <limit effort="100" velocity="1.0" lower="-3.14" upper="3.14" /></joint>
+  <link name="Left_Arm">
+    <inertial>
+      <origin xyz="0.0145222302864002 -0.0182893396472853 -0.00285028055727338" rpy="0 0 0" />
+      <mass value="0.0335578597315161" />
+      <inertia ixx="1.84122972735832E-05" ixy="4.70298050506963E-06" ixz="2.31744258694691E-07" iyy="4.54847884424944E-06" iyz="-6.4328922806994E-07" izz="1.82958537835698E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Left_Arm.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Left_Arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LA" type="continuous">
+    <origin xyz="0.04125 0.09365 0" rpy="0 0 0" />
+    <parent link="Body" />
+    <child link="Left_Arm" />
+    <axis xyz="-1 0 0" />
+  <limit effort="100" velocity="1.0" lower="-3.14" upper="3.14" /></joint>
+<link name="screen_panel"><visual><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.12 0.08 0.001" /></geometry><material name="screen"><color rgba="0 0 0 1" /></material></visual></link><joint name="screen_to_head" type="fixed"><parent link="Head" /><child link="screen_panel" /><origin xyz="0 0.025 0.06" rpy="0 0 0" /></joint></robot>

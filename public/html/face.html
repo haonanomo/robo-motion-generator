@@ -1,0 +1,115 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Face</title>
+  <style id="dynamic-style"></style>
+</head>
+<body>
+  <div class="face">
+    <div class="eye left">
+      <div class="pupil"></div>
+      <div class="eyelid upper"></div>
+      <div class="eyelid lower"></div>
+    </div>
+    <div class="eye right">
+      <div class="pupil"></div>
+      <div class="eyelid upper"></div>
+      <div class="eyelid lower"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+   <script>
+fetch('face.css')
+  .then(res => res.text())
+  .then(css => {
+    document.getElementById('dynamic-style').textContent = css;
+  });
+</script> -->
+  <!-- <script>
+fetch('face.js')
+  .then(res => res.text())
+  .then(js => {
+    eval(js);
+    const face = new FaceController({
+      leftEye: document.querySelector(".left.eye"),
+      rightEye: document.querySelector(".right.eye"),
+      mouth: document.querySelector(".mouth"),
+      upperLeftEyelid: document.querySelector(".left .eyelid.upper"),
+      upperRightEyelid: document.querySelector(".right .eyelid.upper"),
+      lowerLeftEyelid: document.querySelector(".left .eyelid.lower"),
+      lowerRightEyelid: document.querySelector(".right .eyelid.lower"),
+      face: document.querySelector(".face"),
+    });
+    face.startBlinking();
+    face.startBreathing();
+  });
+</script>
+<script src="/html/face.js"></script>
+<script>
+  const face = new FaceController({
+    leftEye: document.querySelector(".left.eye"),
+    rightEye: document.querySelector(".right.eye"),
+    mouth: document.querySelector(".mouth"),
+    face: document.querySelector(".face"),
+  });
+  face.startBlinking();
+  face.startBreathing();
+</script>
+
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot Face</title>
+
+    <!-- Load custom face styles -->
+    <link rel="stylesheet" href="/html/face.css" />
+
+    <!-- Optional fun font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+
+    <!-- Load Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  </head>
+  <body>
+    <div class="face">
+      <div class="eye left">
+        <div class="eyelid upper"></div>
+        <div class="eyelid lower"></div>
+      </div>
+      <div class="mouth"></div>
+      <div class="eye right">
+        <div class="eyelid upper"></div>
+        <div class="eyelid lower"></div>
+      </div>
+    </div>
+
+    <!-- Load FaceController class (no socket version) -->
+    <script src="/html/face.js"></script>
+
+    <!-- Initialize FaceController -->
+    <script>
+      window.onload = () => {
+        const face = new FaceController({
+          leftEye: document.querySelector(".left.eye"),
+          rightEye: document.querySelector(".right.eye"),
+          mouth: document.querySelector(".mouth"),
+          upperLeftEyelid: document.querySelector(".left .eyelid.upper"),
+          upperRightEyelid: document.querySelector(".right .eyelid.upper"),
+          lowerLeftEyelid: document.querySelector(".left .eyelid.lower"),
+          lowerRightEyelid: document.querySelector(".right .eyelid.lower"),
+          face: document.querySelector(".face"),
+        });
+
+        face.startBlinking();
+        face.startBreathing();
+      };
+    </script>
+  </body>
+</html>

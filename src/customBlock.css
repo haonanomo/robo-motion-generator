@@ -1,0 +1,52 @@
+.dance-spin {
+  background-color: #cd9541; /* 来自 @color-audio */
+  background-image: url("./soundWave.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  color: #fff;
+  font-weight: bold;
+  font-size: 10px;
+  border-radius: 4px;
+  padding: 0 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dance-spin::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-image: linear-gradient(
+    45deg,
+    transparent 25%,
+    #fff 25%,
+    #fff 50%,
+    transparent 50%,
+    transparent 75%,
+    #fff 75%
+  );
+  background-size: 10px 10px;
+  z-index: 1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.dance-spin-text {
+  margin-left: 4px;
+  flex: 1 1 auto;
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
